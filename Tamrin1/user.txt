@@ -1,0 +1,31 @@
+کوئری ساخت جدول
+{
+	CREATE TABLE `user` (
+	  `id` int(11) NOT NULL,
+	  `firstName` varchar(30) NOT NULL,
+	  `lastName` varchar(30) NOT NULL,
+	  `fatherName` varchar(30) NULL,
+	  `birthdate` varchar(10) NULL,
+	  `nationalCode` varchar(10) NULL,
+	  `phoneNumber` varchar(11) NULL,
+	  `email` varchar(50) NULL,
+	  `accountStatus` enum('active','deactive','suspended') NOT NULL,
+	  `gender` enum('male','female') NOT NULL
+	) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+
+	ALTER TABLE `user`
+	  ADD PRIMARY KEY (`id`),
+	  ADD UNIQUE KEY `nationalCode` (`nationalCode`),
+	  ADD UNIQUE KEY `phoneNumber` (`phoneNumber`),
+	  ADD UNIQUE KEY `email` (`email`);
+	  
+	ALTER TABLE `user`
+	  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+} 
+
+ثبت نام
+	INSERT INTO user (firstName,lastName,fatherName,birthdate,nationalCode,phoneNumber,email,gender)
+	VALUES ("ali","ansaripoor","mohammad","1382/05/23","1190332305","09908692305","aliansaipoor2305@gmail.com","male")
+
+حذف کاربر
+	DELETE FROM user WHERE nationalCode = "1190332305"

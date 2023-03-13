@@ -1,0 +1,29 @@
+کوئری ساخت جدول
+{
+	CREATE TABLE `contactUs`(
+		`id` int(11) NOT NULL,
+		`subjectType` varchar(100) NOT NULL,
+		`subjectTitle` varchar(100) NOT NULL,
+		`message` varchar(1000) NOT NULL,
+		`attachment` text NULL,
+		`email` varchar(50) NULL,
+		`phoneNumber`varchar(11) NULL,
+		`explanation` varchar(250) NULL,
+		`username` varchar(30) NOT NULL,
+		`fullname` varchar(100) NULL,
+		`date` varchar(10) NOT NULL
+	)ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+
+	ALTER TABLE `contactUs`
+		ADD PRIMARY KEY (`id`);
+		
+	ALTER TABLE `contactUs`
+		MODIFY `id` int(11) NOT NuLL AUTO_INCREMENT, AUTO_INCREMENT=2;
+}
+
+درج پیام جدید 
+	INSERT INTO contactus (subjectType,subjectTitle,message,attachment,email,phoneNumber,explanation,username,fullname,date)
+	VALUES("others","unable to search","i cant filter in search","file1,file2,file3","aliansaipoor82@gmail.com","09908699859","i've sent screenshots of error as attachment","alissin","ali ansaripoor","1401/12/12")
+
+حذف پیام
+	DELETE FROM contactus WHERE id=1
