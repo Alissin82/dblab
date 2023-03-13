@@ -16,8 +16,9 @@ USE `aliansaripoor_dblab`;
 	  `birthdate` varchar(10) NULL,
 	  `nationalCode` varchar(10) NULL,
 	  `phoneNumber` varchar(11) NULL,
-	  `email` varchar(50) NULL,
-	  `gender` enum('male','female') NOT NULL
+	  `email` varchar(50) NULL,	  
+	  `gender` enum('male','female') NOT NULL,
+	  `status` enum('1','0') NOT NULL
 	) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 	ALTER TABLE `user`
@@ -39,6 +40,6 @@ USE `aliansaripoor_dblab`;
 
 -----------------------------------------------------
 
---> Hard Delete data of table `user` with string
+--> Soft Delete data of table `user` with string
 
-	DELETE FROM user WHERE nationalCode = "1190332305"
+	UPDATE user SET status='0' WHERE id='1190332305'

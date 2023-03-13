@@ -3,7 +3,7 @@ function connect(){
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $database = "dblab";
+  $database = "aliansaripoor_dblab";
 
   $connection = mysqli_connect($servername,$username,$password,$database);
   if (!$connection) {

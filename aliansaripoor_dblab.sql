@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2023 at 10:47 AM
+-- Generation Time: Mar 13, 2023 at 08:06 PM
 -- Server version: 5.7.14
 -- PHP Version: 7.0.10
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dblab`
+-- Database: `aliansaripoor_dblab`
 --
-CREATE DATABASE IF NOT EXISTS `dblab` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_persian_ci;
-USE `dblab`;
+CREATE DATABASE IF NOT EXISTS `aliansaripoor_dblab` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_persian_ci;
+USE `aliansaripoor_dblab`;
 
 -- --------------------------------------------------------
 
@@ -39,7 +39,8 @@ CREATE TABLE `contactus` (
   `explanation` varchar(250) COLLATE utf8mb4_persian_ci DEFAULT NULL,
   `username` varchar(30) COLLATE utf8mb4_persian_ci NOT NULL,
   `fullname` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT NULL,
-  `date` varchar(10) COLLATE utf8mb4_persian_ci NOT NULL
+  `date` varchar(10) COLLATE utf8mb4_persian_ci NOT NULL,
+  `status` enum('1','0') NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
@@ -47,7 +48,7 @@ CREATE TABLE `contactus` (
 --
 
 INSERT INTO `contactus` (`id`, `subjectType`, `subjectTitle`, `message`, `attachment`, `email`, `phoneNumber`, `explanation`, `username`, `fullname`, `date`) VALUES
-(1, 'others', 'unable to search', 'i cant filter in search', 'file1,file2,file3', 'aliansaipoor82@gmail.com', '09908699859', 'i\'ve sent screenshots of error as attachment', 'alissin', 'ali ansaripoor', '1401/12/12');
+(1, 'others', 'unable to search', 'i cant filter in search', 'file1,file2,file3', 'aliansaipoor2305@gmail.com', '09908692305', 'i\'ve sent screenshots of error as attachment', 'alissin', 'ali ansaripoor', '1401/12/12');
 
 -- --------------------------------------------------------
 
@@ -64,16 +65,16 @@ CREATE TABLE `user` (
   `nationalCode` varchar(10) COLLATE utf8mb4_persian_ci DEFAULT NULL,
   `phoneNumber` varchar(11) COLLATE utf8mb4_persian_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8mb4_persian_ci DEFAULT NULL,
-  `accountStatus` enum('active','deactive','suspended') COLLATE utf8mb4_persian_ci NOT NULL,
-  `gender` enum('male','female') COLLATE utf8mb4_persian_ci NOT NULL
+  `gender` enum('male','female') COLLATE utf8mb4_persian_ci NOT NULL,
+  `status` enum('1','0') COLLATE utf8mb4_persian_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `firstName`, `lastName`, `fatherName`, `birthdate`, `nationalCode`, `phoneNumber`, `email`, `accountStatus`, `gender`) VALUES
-(1, 'ali', 'ansaripoor', 'ahmad', '1382/05/23', '1190331608', '09908699859', 'aliansaipoor82@gmail.com', 'active', 'male');
+INSERT INTO `user` (`id`, `firstName`, `lastName`, `fatherName`, `birthdate`, `nationalCode`, `phoneNumber`, `email`, `gender`) VALUES
+(1, 'ali', 'ansaripoor', 'mohammad', '1382/05/23', '1190332305', '09908692305', 'aliansaipoor2305@gmail.com', 'male');
 
 --
 -- Indexes for dumped tables

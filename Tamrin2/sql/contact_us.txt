@@ -19,7 +19,8 @@ USE `aliansaripoor_dblab`;
 		`explanation` varchar(250) NULL,
 		`username` varchar(30) NOT NULL,
 		`fullname` varchar(100) NULL,
-		`date` varchar(10) NOT NULL
+		`date` varchar(10) NOT NULL,
+		`status` enum('1','0') NOT NULL
 	)ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 	ALTER TABLE `contactUs`
@@ -34,10 +35,10 @@ USE `aliansaripoor_dblab`;
 --> insert data for table `contactus`
 
 	INSERT INTO contactus (subjectType,subjectTitle,message,attachment,email,phoneNumber,explanation,username,fullname,date)
-	VALUES("others","unable to search","i cant filter in search","file1,file2,file3","aliansaipoor82@gmail.com","09908699859","i've sent screenshots of error as attachment","alissin","ali ansaripoor","1401/12/12")
+	VALUES("others","unable to search","i cant filter in search","file1,file2,file3","aliansaipoor2305@gmail.com","0990862305","i've sent screenshots of error as attachment","alissin","ali ansaripoor","1401/12/12")
 
 -----------------------------------------------------
 
---> Hard Delete data of table `contactus` with string
+--> Soft Delete data of table `contactus` with string
 
-	DELETE FROM contactus WHERE id=1
+	UPDATE contactus SET status='0' WHERE id='1'
